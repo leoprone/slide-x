@@ -1,0 +1,93 @@
+html {
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+  
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+  }
+  
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--text-color);
+  }
+  
+  a {
+    color: var(--link-color);
+    transition: all 0.5s ease-out;
+  }
+  
+  a:hover {
+    opacity: 0.75;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+  
+  h4 {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  h5 {
+    margin: 0;
+    font-size: 0.85rem;
+  }
+  
+  h6 {
+    margin: 0;
+    font-size: 0.7rem;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  p {
+    line-height: 1.6;
+  }
+
+  .carrousel{               
+    border: thick solid black;
+    height: 50vh;
+    width: 50%;  
+   overflow-x: hidden;   
+    display: flex;  
+ }
+.carrousel-container{
+    scroll-snap-type: x proximity; 
+width: 100%;
+ overflow-y: hidden;
+ overflow-x: scroll;
+display: grid; 
+ grid-template-columns: repeat(2, 100%);
+}
+.carrousel-slide{
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+   scroll-snap-align: center;
+                          }
+
+.carrousel-slide:nth-child(even){
+               background-color: rgb(47, 47, 189);
+}
