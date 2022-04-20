@@ -1,6 +1,9 @@
+:root{
+  --cuadro-bici: rgb(73, 0, 0);
+}
 html {
     box-sizing: border-box;
-    font-family: var(--font);
+    
     font-size: 16px;
     scroll-behavior: smooth;
   }
@@ -13,13 +16,16 @@ html {
   
   body {
     margin: 0;
+    padding: 0%;
     overflow-x: hidden;
-    color: var(--text-color);
+    color: rgb(10, 10, 69);
+    background-color: rgb(0, 0, 0);
   }
   
   a {
     color: var(--link-color);
     transition: all 0.5s ease-out;
+    list-style: none;
   }
   
   a:hover {
@@ -65,29 +71,346 @@ html {
     line-height: 1.6;
   }
 
-  .carrousel{               
-    border: thick solid black;
-    height: 50vh;
-    width: 50%;  
-   overflow-x: hidden;   
-    display: flex;  
+ .clip-path{
+   position: relative;
+   background-image: url("../assets/puesta-a-tierra.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+   clip-path: polygon(0% 40%, 100% 10%, 100% 100%, 0% 100%);
+   opacity: 0.8;
  }
-.carrousel-container{
-    scroll-snap-type: x proximity; 
-width: 100%;
- overflow-y: hidden;
- overflow-x: scroll;
-display: grid; 
- grid-template-columns: repeat(2, 100%);
-}
-.carrousel-slide{
-        display: flex;
-        flex-direction: column;
-        justify-content: center; 
-        align-items: center;
-   scroll-snap-align: center;
-                          }
 
-.carrousel-slide:nth-child(even){
-               background-color: rgb(47, 47, 189);
+ h1{
+   color: white;
+ }
+ .clip-path p{
+   color: aqua;
+ }
+ .menu-item a{
+   display: inline-block;
+   text-decoration: none;
+   background-color: blueviolet;
+   margin-right: 2rem;
+   list-style: none;   
+   
+ }
+ .menu-item{
+   flex-direction: row;
+   float: left;
+   justify-items: flex-end;
+ }
+
+.header >*{
+  width: 100vw;
+  height: auto;
+  position: absolute;
+  display: flex;
+ 
+  float: right; 
 }
+.logo{
+  width: 100px;
+  height: 30px;
+  background-color: rgb(23, 34, 31);
+}
+
+/*animaciones*/
+.ext{
+  
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80vw;
+  height: 40vw;
+  
+  background-color: rgb(18, 17, 21);
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+
+@keyframes rueda{
+  0%{
+    transform: rotate(0deg);
+     }
+  
+    
+       100%{
+        transform: rotate(360deg);
+         }
+}
+.div-1{
+   width: 10%;
+   height: 20%;
+  top: 50%;
+  left: 20%;
+   position: relative;
+   color: rgb(151, 129, 129);
+   background: radial-gradient(circle, rgb(16, 16, 16) 10%, rgba(53, 54, 54, 0.7) 10%, rgba(57, 58, 58, 0) 57%,black 57%);
+   border-radius: 50%;
+   
+   animation: rueda 1s linear infinite;
+   z-index: 20;
+  }
+  .rueda-delantera{
+    left: 35%;
+    top: 31%;
+    color: rgb(247, 208, 160);
+  }
+  
+@keyframes nubes{
+  0%{
+    transform: translateX(75vw);
+     }
+     50%{
+      transform: translateX(-25vw);
+       }
+       100%{
+        transform: translateX(-75vw);
+         }
+}
+.div-2{
+  width: 20%;
+  height: 20%;
+  background-color: rgb(148, 148, 153, 0.7);
+  position: relative;
+  top: -15%;
+  left: 1%;
+  border-radius: 50%;
+  filter: blur(0.8rem);
+  box-shadow: 2rem 0rem 1rem 1rem rgb(118, 114, 114, 0.7), -1rem -1rem 1rem 1rem rgb(168, 171, 168);
+  
+  animation: nubes 600s linear infinite;
+  z-index: 1;
+}
+.div-2::before{
+   content: "";
+   width: 20%;
+  height: 20%;
+  background-color: rgb(148, 148, 153, 0.6);
+  position: absolute;
+  top: -15%;
+  left: 10%;
+  border-radius: 50%;
+  filter: blur(0.1rem);
+  box-shadow: 2rem 0rem 0.1rem rgb(133, 131, 131, 0.6), -1rem -1rem 1rem 1rem rgb(168, 171, 168, 0.5);
+  animation: nubes 500s linear infinite;
+  
+  z-index: 1;
+
+}
+.div-2::after{
+  content: "";
+   width: 20%;
+  height: 20%;
+  background-color: rgb(148, 148, 153, 0.5);
+  position: absolute;
+  top: -15%;
+  left: 10%;
+  border-radius: 50%;
+  filter: blur(0.1rem);
+  box-shadow: 2rem 0rem  rgb(104, 103, 103, 0.6), -1rem -1rem 1rem 1rem rgb(168, 171, 168);
+  animation: nubes 400s linear infinite;
+  
+  z-index: 1;
+
+}
+.div-3{
+
+  width: 40%;
+  height: 10%;
+  background-color: rgb(212, 209, 209, 0.6);
+  position: absolute;
+  top: 10%;
+  left: 1%;
+  border-radius: 50%;
+  filter: blur(0.2rem);
+  box-shadow: 2rem 0rem 0.1rem rgb(249, 184, 184, 0.5), -1rem -1rem 1rem 1rem rgba(180, 179, 186, 0.5);
+  
+  animation: nubes 300s linear infinite;
+  z-index: 2;
+}
+.div-3::before{
+  content: "";
+   width: 20%;
+  height: 20%;
+  background-color: rgb(148, 148, 153, 0.6);
+  position: absolute;
+  top: -15%;
+  left: 10%;
+  
+  border-radius: 50%;
+  box-shadow: 2rem 0rem  rgb(133, 191, 144, 0.7), -1rem -1rem 1rem 1rem rgb(168, 171, 168);
+  animation: nubes 500s linear infinite;
+  
+  z-index: 1;
+
+}
+.div-3::after{
+  content: "";
+  width: 20%;
+ height: 20%;
+ background-color: rgb(148, 148, 153, 0.7);
+ position: absolute;
+ top: -15%;
+ left: 10%;
+ border-radius: 50%;
+ filter: blur(0.1rem);
+ box-shadow: 2rem 0rem  rgb(104, 103, 103, 0.7), -1rem -1rem 1rem 1rem rgb(168, 171, 168);
+ animation: nubes 500s linear infinite;
+ 
+ z-index: 1;
+
+}
+.nube-4{
+  
+    width: 10%;
+    height: 10%;
+    background-color: rgb(224, 224, 224, 0.5);
+    position: relative;
+    top: -95%;
+    left: -60%;
+    border-radius: 50%;
+    filter: blur(0.5rem);
+    box-shadow: 2rem 0rem 1rem 1rem rgb(241, 219, 219, 0.6), -1rem -1rem 1rem 1rem rgb(218, 231, 218);
+    
+    animation: nubes 800s linear infinite;
+    z-index: 1;
+  }
+
+.caño-arriba{
+  position: relative;
+  left: 29%;
+  top: -13%;
+  width: 8.5%;
+  height: 2%;
+  background-color: var(--cuadro-bici);
+  border-radius: 1rem;
+  transform: rotate(-10deg);
+  z-index: 20;
+}
+.caño-abajo{
+  position: relative;
+  left: 25%;
+  top: -2.5%;
+  width: 7%;
+  height: 1.5%;
+  background-color: var(--cuadro-bici);
+  border-radius: 1rem;
+  z-index: 20;
+}
+.caño-atras{
+  position: relative;
+  left: 23.2%;
+  top: -11.7%;
+  width: 7.8%;
+  height: 2%;
+  background-color: var(--cuadro-bici);
+  border-radius: 10rem;
+  transform: rotate(-50deg);
+  z-index: 20;
+}
+.caño-adelante{
+  position: relative;
+  left: 34%;
+  top: -11.5%;
+  width: 8.6%;
+  height: 2%;
+  background-color: var(--cuadro-bici);
+  border-radius: 10rem;
+  transform: rotate(-110deg);
+  z-index: 20;
+}
+.caño-asiento{
+  position: relative;
+  left: 26.7%;
+  top: -14.5%;
+  width: 7.5%;
+  height: 2%;
+  background-color: var(--cuadro-bici);
+  border-radius: 10rem;
+  transform: rotate(-110deg);
+  z-index: 20;
+}
+.caño-asiento::before{
+  content: "";
+  position: absolute;
+  width: 2.2vw;
+  height: 2.2vw;
+  background-color: rgb(26, 25, 25);
+  border-radius: 50%;
+  bottom: -75%;
+  left: -6%;
+  z-index: 20;
+}
+
+.caño-asiento::after{
+  content: "";
+  position: absolute;
+  right: 0%;
+  bottom: -300%;
+  width: 7.8vw;
+  height: 0.86vw;
+  background-color: var(--cuadro-bici);
+  border-radius: 10rem;
+  transform: rotate(60deg);
+  z-index: 19;
+  
+}
+
+.sol{
+  width: 5vw;
+  height: 5vw;
+  top: -9%;
+  left: 50%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(130, 102, 26, 0.7) 10%, rgba(196, 65, 21, 0.4) 100%);
+  position: relative;
+  box-shadow: 0 0 5rem 8rem rgba(126, 35, 2, 0.7);
+  z-index: 0;
+}
+ .piso{
+   width: 100%;
+   height: 40%;
+   top: -17%;
+   z-index: 18;
+   position: relative;
+   filter: blur(0.05rem);
+   background-color: rgb(1, 18, 4);
+ }
+ .piso::before{
+   content: "";
+   position: absolute;
+   width: 4vw;
+   height: 0.5vw;
+   top: 60%;
+   left: 20%;
+   border-radius: 2rem;
+   
+   box-shadow: 1rem 1rem 1rem 0.1rem rgb(1, 26, 1);
+   filter: blur(0.1rem);
+   background-color: rgb(14, 5, 1);
+ animation: nubes 5s linear infinite;
+  }
+ .piso::after{
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 80%;
+  width: 3vw;
+  height: 0.2vw;
+  border-radius: 2rem;
+
+  box-shadow: 1rem 1rem 1rem 0.1rem rgb(6, 14, 6);
+  filter: blur(0.1rem);
+  background-color: rgb(24, 23, 23);
+  animation: nubes 5s linear infinite;
+}
+ .blur{
+   filter: blur(0.05rem);
+ }
