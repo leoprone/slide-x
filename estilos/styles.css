@@ -128,7 +128,7 @@ html {
   width: 80vw;
   height: 40vw;
   
-  background-color: rgb(18, 17, 21);
+  background-color: rgb(33, 33, 33);
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -369,9 +369,9 @@ html {
   top: -9%;
   left: 50%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(130, 102, 26, 0.7) 10%, rgba(196, 65, 21, 0.4) 100%);
+  background: radial-gradient(circle, rgba(130, 102, 26, 0.954) 10%, rgba(255, 157, 28, 0.8) 100%);
   position: relative;
-  box-shadow: 0 0 5rem 8rem rgba(126, 35, 2, 0.7);
+  box-shadow: 0 0 5rem 8rem rgba(126, 37, 2, 0.7);
   z-index: 0;
 }
  .piso{
@@ -381,7 +381,7 @@ html {
    z-index: 18;
    position: relative;
    filter: blur(0.05rem);
-   background-color: rgb(1, 18, 4);
+   background-color: rgb(13, 58, 20);
  }
  .piso::before{
    content: "";
